@@ -1,0 +1,76 @@
+let name: any                Standard i JS
+let name: unknown 
+
+let name: string 
+let age: number 
+let isEnabled: boolean
+let placement: number|string    //Union
+let skills: string[] = []
+let roles: [number, string]     //Tuple
+
+type vs. interface
+
+
+I JavaScript är type och interface samma sak. 
+
+Interface kommer ifrån den objektorienterade programmeringsbiten där vi har olika ben;
+encapsulation, inheritance, polimophism, abstraction.
+Dessa är de fyra grundpelarna i objektorienterad programmering (OOP).
+
+React JavaScript implementerar OOP halv som halvt precis som all JavaScript
+
+Type = alias för ett interface
+
+Interface = ett kontrakt 
+Där vi defenierar upp hur något ska se ut och hur något ska fungera. Så alla som 
+implementerar detta interfacet har samma kriterier.
+
+class = alias för en funktion 
+
+nullable ? = den får vara tom och är valbar
+
+type Person = {
+  name: string
+  age: number
+  nickName?: string 
+}
+type Student = Person & {
+  studentNumber: number
+}
+
+interface IPerson {
+  name: string
+  age: number
+  nickName?: string 
+}
+interface IStudent extends IPerson {
+  studentNumber: number
+}
+
+En funktion kan deklareras på lite olika sätt; 
+
+Vi kan ha en viss typ av funktion; type addToCart = () => void 
+Denna kommer att returnera undefeind eftersom void är ingenting. Detta är som att säga 
+utför saken utan att ge mig något tillbaka.
+
+Ett annat alternativ är att säga never; type addToCart = () => never. Denna säger att 
+funktionen absolut inte ska skicka något tillbaka. 
+
+Om vi vill att funktionen ska returnera ett värd; type addToCart = () => number. Denna 
+säger att funktionen ska returnera en number datatyp.
+
+Det vi kan göra med interface är att skapa mallar för hur saker och ting ska se ut. 
+
+Ex; 
+Låt säga att vi vill skapa en mall för hur en produkt ska se ut, då kan vi göra det så 
+här;
+
+interface IProduct {
+    articleNumber: string,
+    name: string,
+    description: string, 
+    price: number
+}
+
+Här har vi skapat en mall för hur en produkt ska se ut. Så den ska alltid ha 
+ett arikel nummer osv. 
