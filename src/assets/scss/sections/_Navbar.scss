@@ -1,0 +1,116 @@
+.navbar {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo navicons"
+                             "navlinks navlinks";
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        grid-area: logo;
+        font-size: 35px;
+        font-weight: 700;
+        color: $color-dark;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-dark;
+        }
+    }
+
+    .nav-links {
+        grid-area: navlinks;
+        display: none;
+        height: 100%;
+        overflow: hidden;
+        font-weight: 400;
+
+        .nav-link {
+            color: $color-dark;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 15px 15px;
+
+            &:hover {
+                color: $color-theme;
+                text-decoration: none;
+            }
+        }
+
+        .active {
+            color: $color-theme;
+            text-decoration: none;
+        }
+    }
+
+    .nav-icon-links {
+        grid-area: navicons;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .nav-icon {
+            background-color: $color-white;
+            color: $color-dark;
+            width: 36px;
+            height: 36px;
+            margin-left: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 6px 4px $color-shadow; 
+            position: relative;
+            border: none;
+            
+            &:hover {
+                text-decoration: none;
+                color: $color-white;
+                background-color: $color-dark;
+            }
+
+            .bg-theme {
+                background-color: $color-theme;
+            }
+        }
+
+        .active {
+            text-decoration: none;
+            color: $color-white;
+            background-color: $color-dark;
+        }
+
+        .btn-nav-icon {
+            text-decoration: none;
+            border: none;
+            outline: none;
+            color: $color-white;
+            background-color: $color-dark;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "logo navlinks navicons";
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .nav-links {
+            grid-area: navlinks;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
