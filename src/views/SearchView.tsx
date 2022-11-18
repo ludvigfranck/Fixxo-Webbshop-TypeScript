@@ -1,8 +1,12 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const SearchView = () => {
   return (
-    <div>SearchView</div>
+    <>
+      <NavbarSection />
+      <div>LikeView</div>
+    </>
   )
 }
 

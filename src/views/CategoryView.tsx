@@ -1,8 +1,13 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const CategoryView = () => {
   return (
-    <div>CategoryView</div>
+    <>
+      <NavbarSection />
+      <div>CategoryView</div>
+    </>
+    
   )
 }
 

@@ -1,8 +1,12 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const ProductsView = () => {
   return (
-    <div>ProductsView</div>
+    <>
+      <NavbarSection />
+      <div>ProductsView</div>
+    </>
   )
 }
 

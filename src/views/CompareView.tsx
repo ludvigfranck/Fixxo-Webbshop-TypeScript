@@ -1,8 +1,12 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const CompareView = () => {
   return (
-    <div>CompareView</div>
+    <>
+      <NavbarSection />
+      <div>CompareView</div>
+    </>
   )
 }
 

@@ -1,8 +1,13 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const ContactsView = () => {
   return (
-    <div>ContactsView</div>
+    <>
+      <NavbarSection />
+      <div>ContactsView</div>
+    </>
+    
   )
 }
 

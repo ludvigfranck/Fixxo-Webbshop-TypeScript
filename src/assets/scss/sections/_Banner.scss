@@ -1,0 +1,89 @@
+.banners {
+    margin-bottom: 60px;
+    
+    .container {
+        display: grid;
+        grid-template-columns: 1045px 635px;
+
+        .box-left {
+            height: 560px;
+            background-color: $color-pink;
+            position: relative;
+
+            .clearence-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                bottom: 100px;
+                left: 50px;
+                width: 420px;
+
+                h1 {
+                    font-size: 45px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
+                .btn-theme {
+                    width: 188px;
+                }
+            }
+
+            .clearence-img {
+                height: 560px;
+                position: absolute;
+                right: 0px;
+
+                img {
+                    object-fit: cover;
+                    height: 560px;
+                }
+            }
+        }
+
+        .box-right {
+            height: 560px;
+            background-color: $color-lightgray;
+            position: relative;
+
+            .new-arrivals-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                left: 50px;
+                bottom: 100px;
+
+                h1 {
+                    font-size: 45px;
+                    font-weight: 700;
+                    margin-bottom: 50px;
+                }
+
+                .btn-theme {
+                    width: 188px;
+                    background-color: $color-dark;
+
+                    &:hover {
+                        background-color: $color-theme;
+                    }
+                }
+            }
+
+            .new-arrivals-img {
+                height: 560px;
+                position: absolute;
+                right: 0;
+
+                img {
+                    object-fit: cover;
+                    height: 560px;
+                }
+            }
+        }
+    }
+}

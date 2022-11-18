@@ -1,8 +1,12 @@
 import React from 'react'
+import NavbarSection from '../sections/NavbarSection'
 
 const LikeView = () => {
   return (
-    <div>LikeView</div>
+    <>
+      <NavbarSection />
+      <div>LikeView</div>
+    </>
   )
 }
 
