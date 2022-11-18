@@ -8,10 +8,13 @@ import ContactsView from './views/ContactsView';
 import SearchView from './views/SearchView';
 import CompareView from './views/CompareView';
 import LikeView from './views/LikeView';
+import ProductProvider from './contexts/ProductContext';
+
 
 const App: React.FC = () => {
   
   return (
+    <ProductProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeView />} />
@@ -23,6 +26,8 @@ const App: React.FC = () => {
         <Route path="/like" element={<LikeView />} />
       </Routes>
     </BrowserRouter>
+    </ProductProvider>
+
   );
 }
 
