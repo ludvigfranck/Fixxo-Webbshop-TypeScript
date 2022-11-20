@@ -1,0 +1,81 @@
+.flashsale {
+    margin-bottom: 60px;
+
+    .container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .flashsale-box {
+            width: 825px;
+            height: 670px;
+            
+
+            img {
+                object-fit: cover;
+                width: 825px;
+                height: 670px;
+            }
+        }
+
+        .box-content {
+            position: absolute;
+            top: 0;
+            width: 825px;
+            height: 670px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: 45px;
+                font-weight: 600;
+                color: $color-white;
+                margin-bottom: 20px;
+            }
+
+            .btn-theme {
+                width: 188px;
+                background-color: $color-white;
+                color: $color-dark;
+
+                &:hover {
+                    background-color: $color-theme;
+
+                    .corner-left {
+                        border-top: 1px solid $color-white;
+                        border-left: 1px solid $color-white;
+                    }
+
+                    .corner-right {
+                        border-bottom: 1px solid $color-white;
+                        border-right: 1px solid $color-white;
+                    }
+                }
+
+                .corner-left {
+                    border-top: 1px solid $color-dark;
+                    border-left: 1px solid $color-dark;
+                }
+
+                .corner-right {
+                    border-bottom: 1px solid $color-dark;
+                    border-right: 1px solid $color-dark;
+                }
+            }
+        }
+
+        .flashsale-content {
+            text-align: start;
+            width: 80%;
+            height: 670px;
+
+            .flashsale-cards {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }
+    }
+}

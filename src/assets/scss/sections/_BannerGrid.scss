@@ -1,0 +1,172 @@
+.banner-grid {
+    margin-bottom: 70px;
+
+    .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+
+        .banner-left {
+            color: $color-white;
+            padding: 30px 10px;
+            background-color: $color-brown;
+    
+            .banner-left-img {
+                display: none;
+            }
+    
+            .banner-left-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        
+                h1 {
+                    font-size: 20px;
+                }
+        
+                .btn-theme {
+                    width: 188px;
+                    background-color: $color-dark;
+        
+                    &:hover {
+                        background-color: $color-theme;
+                    }
+                }
+            }
+        }
+    
+        .banner-right {
+            padding: 30px 10px;
+            background-color: $color-medium-gray;
+    
+            .banner-right-img {
+                display: none;
+            }
+    
+            .banner-right-content {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+        
+                h1 {
+                    font-size: 20px;
+                }
+        
+                .btn-theme {
+                    width: 188px;
+                    background-color: $color-white;
+                    color: $color-dark;
+        
+                    &:hover {
+                        background-color: $color-theme;
+                        color: $color-white;
+                    }
+        
+                    .corner-left {
+                        border-left: 1px solid $color-dark;
+                        border-top: 1px solid $color-dark;
+                    }
+        
+                    &:hover .corner-left {
+                        border-left: 1px solid $color-white;
+                        border-top: 1px solid $color-white;
+                    }
+        
+                    .corner-right {
+                        border-right: 1px solid $color-dark;
+                        border-bottom: 1px solid $color-dark;
+                    }
+        
+                    &:hover .corner-right {
+                        border-right: 1px solid $color-white;
+                        border-bottom: 1px solid $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .banner-grid {
+        .container {
+            grid-template-columns: 1fr 1fr;
+            height: 265px;
+
+            .banner-left { 
+                padding: 30px 0;   
+                display: flex;
+                justify-content: center;
+    
+                .banner-left-content {
+                    text-align: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                    h1 {
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        font-size: 45px;
+                    }
+                }
+            }
+    
+            .banner-right {
+                padding: 30px 0;
+                display: flex;
+                justify-content: center;
+    
+                .banner-right-content {
+                    text-align: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                    h1 {
+                        font-weight: 700;
+                        margin-bottom: 30px;
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .banner-grid {
+        .container {
+            height: 400px;
+
+            .banner-left {
+                padding: 0;
+                justify-content: space-around;
+    
+                .banner-left-img {
+                    display: block;
+                }
+    
+                .banner-left-content {
+                    text-align: left;
+                    align-items: flex-start;
+                }
+            }
+    
+            .banner-right {
+                padding: 0;
+                justify-content: space-around;
+    
+                .banner-right-img {
+                    display: block;
+                }
+    
+                .banner-right-content {
+                    text-align: left;
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+}

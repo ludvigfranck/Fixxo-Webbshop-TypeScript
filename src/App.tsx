@@ -15,17 +15,17 @@ const App: React.FC = () => {
   
   return (
     <ProductProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/category" element={<CategoryView />} />
-        <Route path="/products" element={<ProductsView />} />
-        <Route path="/contacts" element={<ContactsView />} />
-        <Route path="/search" element={<SearchView />} />
-        <Route path="/compare" element={<CompareView />} />
-        <Route path="/like" element={<LikeView />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/category" element={<CategoryView />} />
+          <Route path="/products" element={<ProductsView />} />
+          <Route path="/contacts" element={<ContactsView />} />
+          <Route path="/search" element={<SearchView />} />
+          <Route path="/compare" element={<CompareView />} />
+          <Route path="/like" element={<LikeView />} />
+        </Routes>
+      </BrowserRouter>
     </ProductProvider>
 
   );

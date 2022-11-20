@@ -1,0 +1,58 @@
+.speciality {
+    margin-bottom: 65px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 380px;
+        background-color: $linear-gradient-light;
+        position: relative;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            position: absolute;
+            top: 30px;
+        }
+
+        .content-container {
+            height: 240px;
+            width: 95%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+
+            .speciality-box {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background-color: $color-white;
+
+                .box-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-left: 10px;
+
+                    h2 {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    a {
+                        font-size: 16px;
+                        color: $color-dark;
+                    }
+                }
+
+                .gray-box {
+                    background-color: $color-gray;
+                }
+            }
+        }
+    }
+}
+
+
+

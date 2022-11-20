@@ -5,10 +5,10 @@ import { ProductContext } from '../contexts/ProductContext'
 
 
 const FeaturedProductsSection: React.FC = () => {
-const { products, getProducts } = React.useContext(ProductContext) as ProductContextData
+const { featuredProducts, getFeaturedProducts } = React.useContext(ProductContext) as ProductContextData
 
 useEffect(() => {
-  getProducts(8)
+  getFeaturedProducts(8)
 }, [])
   
   return (
@@ -17,7 +17,7 @@ useEffect(() => {
             <h1 data-testid="title">FEATURED PRODUCTS</h1>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" data-testid="featuredProducts">
             {
-              products.map((product: Product) => (<ProductCard product={product} key={product.articleNumber} />))
+              featuredProducts.map((product: Product) => (<ProductCard product={product} key={product.articleNumber} />))
             }
             </div>
         </div>
