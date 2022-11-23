@@ -1,4 +1,4 @@
-.flashsale {
+.sec-flashsale {
     margin-bottom: 60px;
 
     .container {
@@ -7,7 +7,20 @@
         grid-template-columns: 1fr 1fr;
         gap: 30px;
 
-        .flashsale-box {
+        .sec-flashsale-content {
+            display: flex;
+            justify-content: flex-end;
+            height: 670px;
+
+            .sec-flashsale-cards {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                column-gap: 30px;
+            }
+        }
+
+        .sec-flashsale-box {
             width: 825px;
             height: 670px;
             
@@ -22,7 +35,7 @@
         .box-content {
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             width: 825px;
             height: 670px;
             display: flex;
@@ -65,18 +78,6 @@
                     border-bottom: 1px solid $color-dark;
                     border-right: 1px solid $color-dark;
                 }
-            }
-        }
-
-        .flashsale-content {
-            display: flex;
-            height: 670px;
-
-            .flashsale-cards {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                column-gap: 30px;
             }
         }
     }

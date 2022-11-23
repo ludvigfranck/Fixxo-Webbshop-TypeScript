@@ -4,17 +4,19 @@ import BannerSection from '../sections/BannerSection'
 import FeaturedProductsSection from '../sections/FeaturedProductsSection'
 import FlashSaleSection from '../sections/FlashSaleSection'
 import HomeViewHeader from '../sections/HomeViewHeader'
+import SecFlashSaleSection from '../sections/SecFlashSaleSection'
 import SpecialitySection from '../sections/SpecialitySection'
 
 const HomeView: React.FC = () => {
 return (
     <>
       <HomeViewHeader />
-      {/* <BannerSection /> */}
+      <BannerSection />
       <FeaturedProductsSection />
-      {/* <BannerGridSection />
+      <BannerGridSection />
       <SpecialitySection />
-      <FlashSaleSection /> */}
+      <FlashSaleSection />
+      <SecFlashSaleSection />
     </>
   )
 }
