@@ -10,11 +10,11 @@ const HomeView: React.FC = () => {
 return (
     <>
       <HomeViewHeader />
-      <BannerSection />
+      {/* <BannerSection /> */}
       <FeaturedProductsSection />
-      <BannerGridSection />
+      {/* <BannerGridSection />
       <SpecialitySection />
-      <FlashSaleSection />
+      <FlashSaleSection /> */}
     </>
   )
 }

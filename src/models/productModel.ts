@@ -1,12 +1,12 @@
 export interface Product {
-    articleNumber: number
+    articleNumber: string
     name: string
     description?: string
-    category: string
+    category?: string
     price: number
     rating: string
     imageName: string
-    status: boolean
+    status?: boolean
 }
 
 export interface ProductContextData {

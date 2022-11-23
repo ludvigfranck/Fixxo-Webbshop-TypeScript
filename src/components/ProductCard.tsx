@@ -1,13 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
 import { Product } from '../models/productModel'
 
-interface Props {
+interface ProductProps {
     product: Product
   }
 
-const ProductCard: React.FC<Props> = ({product}) => {
-  return (
+const ProductCard: React.FC<ProductProps> = ({product}) => {
+    const { incrementCart } = useShoppingCart()
+    
+    return (
     <div className="col">
         <div className="card">
             <div className="card-img">
@@ -15,7 +18,7 @@ const ProductCard: React.FC<Props> = ({product}) => {
                 <div className="card-menu d-xl-none">
                     <button className="menu-link"><i className="fa-regular fa-heart"></i></button>
                     <button className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
-                    <button className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
+                    <button onClick={() => incrementCart(product.articleNumber, product)} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
                 </div>
                 <NavLink to="/" className="btn-theme btn-card-theme d-xl-none">
                     <span className="corner-left"></span>

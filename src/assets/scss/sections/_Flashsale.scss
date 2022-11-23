@@ -5,6 +5,7 @@
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 30px;
 
         .flashsale-box {
             width: 825px;
@@ -67,14 +68,14 @@
         }
 
         .flashsale-content {
-            text-align: start;
-            width: 80%;
+            display: flex;
             height: 670px;
 
             .flashsale-cards {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
+                column-gap: 30px;
             }
         }
     }
