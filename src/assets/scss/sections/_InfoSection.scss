@@ -1,0 +1,100 @@
+.customer-info {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .customer-info-border {
+        border-top: 1px solid $linear-gradient-dark;
+    }
+
+    .container {
+        max-width: $max-width-small;
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-evenly;
+
+        .customer-info-box {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .customer-info-title {
+                display: none;
+            }
+
+            .customer-info-text {
+                display: none;
+            }
+    
+            .customer-info-icon {
+                background-color: $color-white;
+                color: $color-dark;
+                box-shadow: 0 0 6px 4px $color-shadow;
+                border-radius: 50%;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $color-white;
+                    background-color: $color-dark;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .customer-info {
+        .container {
+            .customer-info-box {
+                .customer-info-title {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .customer-info-text {
+                    display: inline;
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+
+                .customer-info-icon {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .customer-info {
+        .customer-info-border {
+            width: $max-width-small;
+        }
+
+        .container {
+            .customer-info-box {
+                .customer-info-title {
+                    font-size: 20px;
+                }
+
+                .customer-info-text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

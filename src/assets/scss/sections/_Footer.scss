@@ -1,0 +1,36 @@
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    border-top: 1px solid $linear-gradient-dark;
+    background-color: $linear-gradient-light;
+
+    .container {
+        padding-bottom: 30px;
+        padding-top: 30px;
+        
+    } 
+
+    .footer-icons {
+        width: 200px;
+        padding: 0;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        
+        a {
+            color: $color-dark;
+
+            &:hover {
+                color: $color-theme;
+            }
+        }
+    }
+
+    .footer-text {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}

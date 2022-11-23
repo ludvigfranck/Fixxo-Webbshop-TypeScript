@@ -18,6 +18,7 @@ const ProductProvider = ({children}: ProviderProps) => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
     const [flashsaleProducts, setFlashsaleProducts] = useState<Product[]>([])
     const [secFlashsaleProducts, setSecFlashsaleProducts] = useState<Product[]>([])
+    const [saleProducts, setSaleProducts] = useState<Product[]>([])
 
     const getProducts = async () => {
         const res = await fetch(url)
@@ -39,7 +40,12 @@ const ProductProvider = ({children}: ProviderProps) => {
         setSecFlashsaleProducts(await res.json())
     }
 
-    return <ProductContext.Provider value={{products, getProducts, featuredProducts, getFeaturedProducts, flashsaleProducts, getFlashsaleProducts, secFlashsaleProducts, getSecFlashsaleProducts}}>
+    const getSaleProducts = async (take = 0) => {
+        const res = await fetch(url + `?take=${take}`)
+        setSaleProducts(await res.json())
+    }
+
+    return <ProductContext.Provider value={{products, getProducts, featuredProducts, getFeaturedProducts, flashsaleProducts, getFlashsaleProducts, secFlashsaleProducts, getSecFlashsaleProducts, saleProducts, getSaleProducts}}>
         {children}
     </ProductContext.Provider>
 }

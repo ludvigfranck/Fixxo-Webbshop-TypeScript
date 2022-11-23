@@ -14,9 +14,11 @@ export interface ProductContextData {
     featuredProducts: Product[]
     flashsaleProducts: Product[]
     secFlashsaleProducts: Product[]
+    saleProducts: Product[]
     getProducts: (url: string) => void
     getFeaturedProducts: (take: number) => void
     getFlashsaleProducts: (take: number) => void
     getSecFlashsaleProducts: (take: number) => void
+    getSaleProducts: (take: number) => void
 }
 
