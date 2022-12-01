@@ -4,21 +4,28 @@ export interface Product {
     description?: string
     category?: string
     price: number
-    rating: string
     imageName: string
     status?: boolean
 }
 
-export interface ProductContextData {
+export interface ReqProduct {
+    articleNumber: string
+    name: string
+    category: string
+    price: number
+    imageName: string
+}
+
+export interface IProductContext {
+    product: Product
+    setProduct: React.Dispatch<React.SetStateAction<Product>>
+    reqProduct: ReqProduct
+    setReqProduct: React.Dispatch<React.SetStateAction<ReqProduct>>
     products: Product[]
-    featuredProducts: Product[]
-    flashsaleProducts: Product[]
-    secFlashsaleProducts: Product[]
-    saleProducts: Product[]
-    getProducts: (url: string) => void
-    getFeaturedProducts: (take: number) => void
-    getFlashsaleProducts: (take: number) => void
-    getSecFlashsaleProducts: (take: number) => void
-    getSaleProducts: (take: number) => void
+    getProducts: () => void
+    createProduct: (e: React.FormEvent) => void
+    getProduct: (articleNumber: string) => void
+    updateProduct: (articleNumber: string, e: React.FormEvent) => void
+    removeProduct: (articleNumber: string) => void
 }
 

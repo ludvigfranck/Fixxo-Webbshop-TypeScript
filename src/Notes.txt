@@ -74,3 +74,69 @@ interface IProduct {
 
 Här har vi skapat en mall för hur en produkt ska se ut. Så den ska alltid ha 
 ett arikel nummer osv. 
+
+
+Web API med fokus på Express JS
+Detta är JavaScripts baserat. Vi ska lära oss att bygga egna Web API med fokus på JavaScript. Client Site Rendering 
+är saker som renderas i webbläsaren. Här har vi html, css och JavaScript. Detta skapar ju lite prblem eftersom genom 
+webbläsaren kan jag gå in och se all kod som finns på sidan. Eftersom vi kan komma åt en databas eller backend lösning 
+med en conection string och genom att vi har vår connection string på frontend kan man hitta den på webbläsaren. Så i 
+vår client site rendering får det absolut aldrig förekomma kopplingar till databaser. 
+
+Då kan man tänka att eftersom express JS är JavaScript så körs den på client side. Men nej den körs på Server site
+Rendering. DVS den körs i bakgrunden. I Server Site Rendering kan vi alltså bygga upp en server. Som ligger och körs 
+bakom en skyddad miljö och bara presenterar data. Du kan alltså då inte se själva strukturen bakom den. Detta sker genom 
+Request och Response. Så låt säga att vi vill gå in på en hemsida ex domain.com det som händer då när du söker på sidan 
+är att du skickar en request till servern för att hämta sidan. När servern har processat Request så skickar den tillbaka 
+en Response med ett DOM objekt. Då får du en sida presenterat till dig. Ex;
+
+          HTTP GET Request
+} <-------------------------------- {
+SERVER                          DATOR
+} --------------------------------> {
+          HTTP Response (DOM)
+
+Du skickar en Request till servern med hemsidans webbadress som sedan skickar tillbaka en Response med en DOM. Så här 
+fungerar det med en server sida alltså ASP.net, PHP osv. Samma sak gäller för web apier. Så när du gör ett web api så 
+sker det exakt samma sak. Vi skickar en request som skickar tillbaka ett data objekt istället för ett DOM objekt. Detta 
+sker varje gång vi anropar apiet.  
+
+Varför vill vi ha server side?
+Det är mindre belasting på användarens datorer. Oftast är den säkrare eftersom vi inte kan komma åt connection string och 
+allt sådant i webbläsaren. Dock finns det risk att det är större respons tider, alltså att det tar lång tid för den att 
+skicka informationen och ta tillbaka informationen. 
+
+Så när det kommer till Express JS så ligger den som en mellanhand mellan webbläsaren och lagringslösningen. Ex;
+
+USER -------> BROWSER -------> WEBB API -------> STORAGE  
+
+- USER: En användare vill gå in på en sida som listar ut alla produkter.
+- BROWSER: Webbläsaren skickar informationen vidare till ett api med hjälp av HTTP Request. 
+- WEBB API: Ett Webb API svarar på den önskvärda förfrågan, kontaktar databasen och skickar sedan informationen tillbaka 
+            med hjälp av HTTP Response. 
+- STORAGE: Lagringslösningen hämtar upp informationen från lagringsplatsen för att sedan skicka det till Webb API. 
+
+Vi har ett par olika HTTP METHODS som vi kan använda. 
+- GET Metoden används för att hämta/läsa information. 
+- POST Metoden används för att lagra/spara information på ett säkert sätt, alltså skickar informationen. 
+- PUT Metoden används för att uppdatera information. 
+
+Vi har några status koder som man måste memorera:
+
+SUCCES:
+- 200: OK                             (allt gick som det skulle - skickar oftast tillbaka data)
+- 201: CREATED                        (när något skapas - kan skicka tillbaka det skapade objektet)
+- 204: NO CONTENT                     (allt gick som det skulle - skickar inte tillbaka data)
+
+CLIENT ERROR (användarens fel):
+- 400: BAD REQUEST                    (något fel har uppstått, ex användaren har inte fyllt i formulär rätt)
+- 401: UNAUTHORIZED                   (användaren måste vara inloggad för att komma åt resursen)
+- 403: FORBIDDEN                      (användaren är inloggad men har inte rätt behörighet)
+- 404: NOT FOUND                      (objektet hittades inte, sidan, produkt etc...)
+- 405: METHOD NOT ALLOWED             (försöker använda en http metod som inte får användas (POST, GET, PUT, DELETE))
+- 409: CONFLICT                       (finns redan en användare med samma ex; e-post)
+
+SERVER ERROR (systemets fel):
+- 500: INTERNAL SERVER ERROR          (generiskt felmeddelande som handlar om att kommunikationen inte kan upprättas)
+- 501: NOT IMPLEMENTED                (försäker komma åt något som inte finns)
+- 503: SERVICE UNAVAILIBLE            (systemet underhålls etc...)

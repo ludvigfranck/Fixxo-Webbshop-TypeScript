@@ -1,0 +1,53 @@
+.product-create {
+    margin-top: 50px;
+
+    .container {
+         max-width: $max-width-small;
+
+        .create-form {
+            display: grid;
+            text-align: center;
+
+            .create-title {
+                font-size: 35px;
+                font-weight: 600;
+            }
+
+            .product-input {
+                display: grid;
+                text-align: start;
+                margin-bottom: 30px;
+
+                .input-title {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+
+                .form-input {
+                    border: 1px solid $color-gray;
+                    height: 50px;
+                    padding-left: 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .create-btn {
+                margin-top: 20px;
+                border: none;
+                height: 50px;
+                font-weight: 600;
+                color: $color-white;
+                background-color: $color-theme;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: $color-dark;
+                }
+            }
+        }
+    }
+}

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
-import { ProductContextData, Product } from '../models/productModel'
+import { IProductContext, Product } from '../models/productModel'
 import { ProductContext } from '../contexts/ProductContext'
 
 
 const FeaturedProductsSection: React.FC = () => {
-const { featuredProducts, getFeaturedProducts } = React.useContext(ProductContext) as ProductContextData
+const { products, getProducts } = React.useContext(ProductContext) as IProductContext
 
 useEffect(() => {
-  getFeaturedProducts(8)
+  getProducts()
 }, [])
   
   return (
@@ -17,7 +17,7 @@ useEffect(() => {
             <h1 data-testid="title">FEATURED PRODUCTS</h1>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" data-testid="featuredProducts">
             {
-              featuredProducts.map((product: Product) => (<ProductCard product={product} key={product.articleNumber} />))
+              products.map((product: Product) => (<ProductCard product={product} key={product.articleNumber} />))
             }
             </div>
         </div>
