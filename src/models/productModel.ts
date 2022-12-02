@@ -22,10 +22,11 @@ export interface IProductContext {
     reqProduct: ReqProduct
     setReqProduct: React.Dispatch<React.SetStateAction<ReqProduct>>
     products: Product[]
+    setProducts: React.Dispatch<React.SetStateAction<Product[]>>
     getProducts: () => void
     createProduct: (e: React.FormEvent) => void
     getProduct: (articleNumber: string) => void
-    updateProduct: (articleNumber: string, e: React.FormEvent) => void
+    updateProduct: (e: React.FormEvent) => void
     removeProduct: (articleNumber: string) => void
 }
 

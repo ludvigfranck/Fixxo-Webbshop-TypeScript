@@ -57,15 +57,16 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const getProduct = async (articleNumber: string) => {
+        console.log(articleNumber)
         const res = await fetch(`${url}/${articleNumber}`)
         if(res.status === 200)
             setProduct(await res.json())
     }
 
-    const updateProduct = async (articleNumber: string, e: React.FormEvent) => {
+    const updateProduct = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        const res = await fetch(`${url}/${articleNumber}`, {
+        const res = await fetch(`${url}/${product.articleNumber}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,7 +81,7 @@ const ProductProvider = ({children}: ProviderProps) => {
             setProduct(default_product)
     }
 
-    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
+    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
         {children}
     </ProductContext.Provider>
 }

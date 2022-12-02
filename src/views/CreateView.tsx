@@ -1,16 +1,18 @@
 import React from 'react'
 import CreateProductSection from '../sections/CreateProductSection'
+import FooterSection from '../sections/FooterSection'
 import NavbarSection from '../sections/NavbarSection'
 import ProductsListSection from '../sections/ProductsListSection'
-import UpdateFormSection from '../sections/UpdateProductSection'
 
-const ProductsView: React.FC = () => {
+const CreateView: React.FC = () => {
   return (
     <>
-      <NavbarSection />
-      <ProductsListSection />
+        <NavbarSection />
+        <CreateProductSection />
+        <ProductsListSection />
+        <FooterSection />
     </>
   )
 }
 
-export default ProductsView
+export default CreateView
