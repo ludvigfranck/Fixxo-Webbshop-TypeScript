@@ -1,4 +1,5 @@
 export interface Product {
+    tag?: string
     articleNumber: string
     name: string
     description?: string
@@ -9,6 +10,7 @@ export interface Product {
 }
 
 export interface ReqProduct {
+    tag: string
     articleNumber: string
     name: string
     category: string
@@ -22,11 +24,13 @@ export interface IProductContext {
     reqProduct: ReqProduct
     setReqProduct: React.Dispatch<React.SetStateAction<ReqProduct>>
     products: Product[]
+    featured: Product[]
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>
     getProducts: () => void
     createProduct: (e: React.FormEvent) => void
     getProduct: (articleNumber: string) => void
     updateProduct: (e: React.FormEvent) => void
     removeProduct: (articleNumber: string) => void
+    getFeatured: (take?: number) => void
 }
 

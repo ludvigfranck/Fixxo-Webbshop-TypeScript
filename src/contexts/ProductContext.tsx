@@ -12,8 +12,9 @@ export const useProductContext = () => {
 }
 
 const ProductProvider = ({children}: ProviderProps) => {
-    const url: string = 'http://localhost:5000/api/products'
+    const baseUrl: string = 'http://localhost:5000/api/products'
     const default_product = {
+        tag: "",
         articleNumber: "", 
         name: "",
         category: "",
@@ -21,6 +22,7 @@ const ProductProvider = ({children}: ProviderProps) => {
         imageName: ""
     }
     const default_reqProduct = {
+        tag: "",
         articleNumber: "", 
         name: "",
         category: "",
@@ -31,11 +33,12 @@ const ProductProvider = ({children}: ProviderProps) => {
     const [product, setProduct] = useState<Product>(default_product)
     const [reqProduct, setReqProduct] = useState<ReqProduct>(default_reqProduct)
     const [products, setProducts] = useState<Product[]>([])
+    const [featured, setFeatured] = useState<ReqProduct[]>([])
 
     const createProduct = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        const res = await fetch(url, {
+        const res = await fetch(baseUrl, {
             method: 'post',
             headers: {
                 'Content-type': 'application/json'
@@ -51,21 +54,21 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const getProducts = async () => {
-        const res = await fetch(url)
+        const res = await fetch(baseUrl)
         if(res.status === 200)
             setProducts(await res.json())
     }
 
     const getProduct = async (articleNumber: string) => {
-        console.log(articleNumber)
-        const res = await fetch(`${url}/${articleNumber}`)
+        console.log(product)
+        const res = await fetch(`${baseUrl}/details/${articleNumber}`)
         if(res.status === 200)
             setProduct(await res.json())
     }
 
     const updateProduct = async (e: React.FormEvent) => {
         e.preventDefault()
-        const res = await fetch(`${url}/${product.articleNumber}`, {
+        const res = await fetch(`${baseUrl}/details/${product.articleNumber}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -75,12 +78,21 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const removeProduct = async (articleNumber: string) => {
-        const res = await fetch(`${url}/${articleNumber}`, { method: 'delete' })
+        const res = await fetch(`${baseUrl}/details/${articleNumber}`, { method: 'delete' })
         if(res.status === 204)
             setProduct(default_product)
     }
 
-    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
+    const getFeatured = async (take: number = 0) => {
+        let url = `${baseUrl}/featured`
+        if(take !== 0)
+            url += `/${take}`
+
+        const res = await fetch(url)
+        setFeatured(await res.json())
+    }
+
+    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, featured, getFeatured, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
         {children}
     </ProductContext.Provider>
 }

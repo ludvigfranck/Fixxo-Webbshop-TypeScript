@@ -140,3 +140,31 @@ SERVER ERROR (systemets fel):
 - 500: INTERNAL SERVER ERROR          (generiskt felmeddelande som handlar om att kommunikationen inte kan upprättas)
 - 501: NOT IMPLEMENTED                (försäker komma åt något som inte finns)
 - 503: SERVICE UNAVAILIBLE            (systemet underhålls etc...)
+
+Controllers är routes, bara olika namn. 
+Den simulerade databasen som vi använder är inte rätt sätt att göra saker på, utan vi använder den bara nu när vi 
+inte har gått igenom databser. 
+
+I vår controller så specefierar vi upp olika routes delar som vi sedan kan använda genom att vi exporterar hela 
+controllern. Genom: 
+
+const controller = express.Router()
+module.exports = controller
+
+Vi ska sen importera controllern till vår server fil. Genom:
+
+const controller = require('./sökvägen/till/controllern')
+
+Vi säger sen app.use('/api/nånting', controller)
+
+Så när vi går in på denna adress så ska vi controllern köras, och controllern ska ha olika endpoints som den svarar på. 
+Så låt säga att vi enkelt skulle vilja hämta alla produkter, då skulle vi kunna skriva i vår controller fil: 
+
+controller.route('/').get((req, res) => {
+
+})
+
+Här specefierar vi att vi ska använda route '/' vilket blir alla produkter och sedan använder vi oss utav en get metod 
+med req (hämta) res (svara). Innuti måsvingarna så specifierar vi vad denna route ska göra. För att skicka iväg alla 
+produkter så skriver vi res.status(200).json(products). Så när status koden är 200 vilket är ok så svarar vi med alla 
+produkter.  
