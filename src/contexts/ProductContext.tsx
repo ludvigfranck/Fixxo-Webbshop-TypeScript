@@ -65,7 +65,6 @@ const ProductProvider = ({children}: ProviderProps) => {
 
     const updateProduct = async (e: React.FormEvent) => {
         e.preventDefault()
-
         const res = await fetch(`${url}/${product.articleNumber}`, {
             method: 'put',
             headers: {

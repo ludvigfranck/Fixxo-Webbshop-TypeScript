@@ -100,7 +100,8 @@
                     }
                 }
     
-                .create-btn {
+                .update-btn {
+                    grid-column: 1 / -1;
                     margin-top: 20px;
                     border: none;
                     height: 50px;
@@ -112,6 +113,23 @@
                     &:hover {
                         background-color: $color-dark;
                     }
+                }
+            }
+
+            .updated-product {
+                margin-top: 30px;
+
+                .succes {
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                    color: green;
+                }
+                .fail {
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                    color: red;
                 }
             }
         }

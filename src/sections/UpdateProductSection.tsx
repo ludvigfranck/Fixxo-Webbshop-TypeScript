@@ -40,7 +40,7 @@ const UpdateProductSection = () => {
             <div className="container">
                 <form className="get-form">
                     <div className="get-product">
-                        <h3>Article Number</h3>
+                        <h3>Update Product</h3>
                         <input id="articleNumber" type="text" className="get-input" placeholder="Type Product article number..." />
                         <span id="error" className="articleNumber-error"></span> 
                         <button onClick={handleChange} className="update-btn">GET PRODUCT</button>
@@ -56,8 +56,7 @@ const UpdateProductSection = () => {
                 {
                     showUpdateForm ? (
                         <div className="form-container">
-                            <h3>Update Product</h3>
-                            <UpdateForm />
+                            <UpdateForm key={productArticleNumber} />
                         </div>) : (<></>)
                 }
             </div>

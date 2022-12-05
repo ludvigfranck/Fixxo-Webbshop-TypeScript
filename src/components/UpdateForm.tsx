@@ -1,13 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ProductContext } from '../contexts/ProductContext'
 import { IProductContext } from '../models/productModel'
 
-const UpdateForm = () => {
+interface ProductArticleNumberProps {
+    key: string
+}
+
+const UpdateForm: React.FC<ProductArticleNumberProps> = ({key}) => {
     const { product, setProduct, updateProduct } = useContext(ProductContext) as IProductContext
+
+    const url: string = 'http://localhost:5000/api/products'
+
+    const [success, setSuccess] = useState<boolean>(false)
+    const [fail, setFail] = useState<boolean>(false)
 
     const price = (e: any) => {
         let num: number = e.target.value
         setProduct({...product, price: num})
+    }
+
+    const handleChange = async () => {
+        // Osäker på om denna funkar att validera med...
+        const res = await fetch(`${url}/${key}`)
+        if(res.status === 200)
+            setSuccess(true)
+        else 
+            setFail(true) 
     }
     
     return (
@@ -29,7 +47,20 @@ const UpdateForm = () => {
                     <label className="input-title">Update Image</label>
                     <input value={product.imageName} onChange={(e) => setProduct({...product, imageName: e.target.value})} className="form-input" placeholder="Update Image..." />
                 </div>
+                <button onClick={handleChange} type="submit" className="update-btn">UPDATE PRODUCT</button>
             </form>
+            {
+                success ? (
+                <div className="updated-product mt-5">
+                    <h3 className="succes">Your'e update was succsesfull!</h3>
+                </div>) : (<></>)
+            }
+            {
+                fail ? (
+                <div className="updated-product mt-5">
+                    <h3 className="fail">Your'e update was unsuccesfull!</h3>
+                </div>) : (<></>)
+            }
         </>
     )
 }
