@@ -1,0 +1,54 @@
+.remove-product {
+    margin-top: 100px;
+
+    .container {
+        max-width: $max-width-small;
+
+        .find-form {
+            text-align: center;
+            display: grid;
+
+            h3 {
+                font-size: 35px;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+
+            .find-input {
+                border: 1px solid $color-gray;
+                height: 50px;
+                padding-left: 10px;
+                margin-bottom: 30px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .find-btn {
+                margin-top: 20px;
+                border: none;
+                height: 50px;
+                font-weight: 600;
+                color: $color-white;
+                background-color: $color-theme;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: $color-dark;
+                }
+            }
+
+            #remove-error {
+                color: $color-theme
+            }
+
+            #removed-product {
+                margin-top: 30px;
+                font-size: 20px;
+                font-weight: 600;
+                color: green;
+            }
+        }
+    }
+}

@@ -6,13 +6,14 @@ import { IProductContext, Product } from '../models/productModel'
 
 const UpdateProductSection = () => {
     const { products, getProducts, getProduct, product, setProduct } = useContext(ProductContext) as IProductContext
+    
     const [showUpdateForm, setShowUpdateForm] = useState<boolean>(false)
     const [productArticleNumber, setProductArticleNumber] = useState<string>("")
     const [showProduct, setShowProduct] = useState<boolean>(false)
 
     let input = document.getElementById("articleNumber") as HTMLFormElement
     let error = document.getElementById('error') as HTMLSpanElement
-    const errorMessage = "It seems like this article number does not exist!  Try again"
+    const errorMessage: string = "It seems like this article number does not exist!  Try again"
 
     useEffect(() => {
         getProducts()
@@ -23,7 +24,7 @@ const UpdateProductSection = () => {
 
         products.map((product: Product) => {
             if(product.articleNumber !== input.value) {
-                console.log(error.innerText = errorMessage)
+                error.innerText = errorMessage
             } else {
                 setShowUpdateForm(true)
                 error.remove()
@@ -43,7 +44,7 @@ const UpdateProductSection = () => {
                         <h3>Update Product</h3>
                         <input id="articleNumber" type="text" className="get-input" placeholder="Type Product article number..." />
                         <span id="error" className="articleNumber-error"></span> 
-                        <button onClick={handleChange} className="update-btn">GET PRODUCT</button>
+                        <button onClick={handleChange} className="update-btn">FIND PRODUCT</button>
                     </div>
                 </form>
                 {

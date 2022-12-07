@@ -1,14 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import FlashsaleImage from '../assets/images/8.png'
+import ProductCard from '../components/ProductCard'
+import { ProductContext } from '../contexts/ProductContext'
+import { IProductContext, Product } from '../models/productModel'
 
 const SecFlashSaleSection: React.FC = () => {
+    const { flashsale, getFlashsale } = useContext(ProductContext) as IProductContext
+
+    useEffect(() => {
+        getFlashsale(4)
+    }, [])
+    
     return (
     <section className="sec-flashsale">
         <div className="container">
             <div className="sec-flashsale-content">
                 <div className="sec-flashsale-cards">
-                    
+                    {
+                        flashsale.map((product: Product) => (<ProductCard key={product.articleNumber} product={product} />))
+                    }
                 </div>
             </div>
             <div className="sec-flashsale-box">

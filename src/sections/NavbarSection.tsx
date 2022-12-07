@@ -21,8 +21,7 @@ return (
                 <NavLink className="nav-link" to="/category" end>Category</NavLink>
                 <NavLink className="nav-link" to="/products" >Products</NavLink>
                 <NavLink className="nav-link" to="/contacts" end>Contacts</NavLink>
-                <NavLink className="nav-link" to="/create" end>Create</NavLink>
-                <NavLink className="nav-link" to="/update" end>Update</NavLink>
+                <NavLink className="nav-link" to="/edit" end>Edit</NavLink>
             </div>
             <div className="nav-icon-links">
                 <NavbarLinks icon="fa-regular fa-magnifying-glass" link="/search" />

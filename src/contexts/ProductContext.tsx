@@ -34,6 +34,8 @@ const ProductProvider = ({children}: ProviderProps) => {
     const [reqProduct, setReqProduct] = useState<ReqProduct>(default_reqProduct)
     const [products, setProducts] = useState<Product[]>([])
     const [featured, setFeatured] = useState<ReqProduct[]>([])
+    const [flashsale, setFlashsale] = useState<ReqProduct[]>([])
+    const [sale, setSale] = useState<ReqProduct[]>([])
 
     const createProduct = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -92,7 +94,25 @@ const ProductProvider = ({children}: ProviderProps) => {
         setFeatured(await res.json())
     }
 
-    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, featured, getFeatured, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
+    const getFlashsale = async (take: number = 0) => {
+        let url = `${baseUrl}/flashsale`
+        if(take !== 0)
+            url += `/${take}`
+
+        const res = await fetch(url)
+        setFlashsale(await res.json())
+    }
+
+    const getSale = async (take: number = 0) => {
+        let url = `${baseUrl}/sale`
+        if(take !== 0)
+            url += `/${take}`
+
+        const res = await fetch(url)
+        setSale(await res.json())
+    }
+
+    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, featured, getFeatured, flashsale, getFlashsale, sale, getSale, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
         {children}
     </ProductContext.Provider>
 }

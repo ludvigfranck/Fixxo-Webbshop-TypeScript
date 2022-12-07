@@ -25,6 +25,8 @@ export interface IProductContext {
     setReqProduct: React.Dispatch<React.SetStateAction<ReqProduct>>
     products: Product[]
     featured: Product[]
+    flashsale: Product[]
+    sale: Product[]
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>
     getProducts: () => void
     createProduct: (e: React.FormEvent) => void
@@ -32,5 +34,7 @@ export interface IProductContext {
     updateProduct: (e: React.FormEvent) => void
     removeProduct: (articleNumber: string) => void
     getFeatured: (take?: number) => void
+    getFlashsale: (take?: number) => void
+    getSale: (take?: number) => void
 }
 
