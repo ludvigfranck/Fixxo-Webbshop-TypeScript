@@ -1,11 +1,16 @@
 import React from 'react'
+import Breadcrumb from '../components/Breadcrumb'
+import ContactFormSection from '../sections/ContactFormSection'
+import MapSection from '../sections/MapSection'
 import NavbarSection from '../sections/NavbarSection'
 
-const ContactsView = () => {
+const ContactsView: React.FC = () => {
   return (
     <>
       <NavbarSection />
-      <div>ContactsView</div>
+      <Breadcrumb currentPage="Contacts" />
+      <MapSection />
+      <ContactFormSection />
     </>
     
   )

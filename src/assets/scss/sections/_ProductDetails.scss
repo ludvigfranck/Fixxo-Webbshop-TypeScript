@@ -1,0 +1,207 @@
+.product-details {
+    margin-top: 50px;
+
+    .container {
+        max-width: $max-width-small;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+
+        .details-images {
+            display: grid;
+
+            .main-image {
+                margin-bottom: 30px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .sub-images {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px;
+
+                img {
+                    width: 160px;
+                    height: 130px;
+                }
+            }
+        }
+
+        .product-info {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+
+            .info-section {
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+
+                .product-name {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
+                .product-rating {
+                    color: $color-theme;
+                }
+
+                .product-price {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .product-description {
+                    font-size: 16px;
+                }
+            }
+
+            .info-form {
+                margin-bottom: 10px;
+                display: flex;
+
+                .titles {
+                    display: grid;
+                    grid-template-rows: 70px 70px 70px 70px;
+                    text-align: center;
+                    width: 90px;
+
+                    h5 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+
+                .inputs {
+                    display: grid;
+                    grid-template-rows: 70px 70px 70px 70px;
+
+                    .size {
+                        padding: 0;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+    
+                        li {
+                            list-style: none;
+    
+                            input {
+                                display: none;
+                            }
+    
+                            label {
+                                border: 1px solid $color-dark;
+                                width: 40px;
+                                height: 40px;
+                                text-align: center;
+                                line-height: 40px;
+                                margin-right: 10px;
+                                cursor: pointer;
+                            }
+    
+                            #small:checked ~ label[for="small"],
+                            #medium:checked ~ label[for="medium"],
+                            #large:checked ~ label[for="large"],
+                            #x-large:checked ~ label[for="x-large"] {
+                                background-color: $color-dark;
+                                color: $color-white;
+                            }
+                        }
+                    }
+    
+                    .color {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+    
+                        .color-btn {
+                            font-size: 14px;
+                            width: 210px;
+                            height: 40px;
+                            color: $color-dark;
+                            background-color: $color-white;
+                        }
+                    }
+
+                    .submit {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        .quantity {
+                            display: flex;
+                            margin-right: 30px;
+                            
+                            .quantity-btn {
+                                border: 1px solid $color-dark;
+                                background-color: $color-white;
+                                height: 55px;
+                                width: 40px;
+                                font-size: 28px;
+                                font-weight: 600;
+                            }
+
+                            .quantity-count {
+                                width: 60px;
+                                height: 55px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-top: 1px solid $color-dark;
+                                border-bottom: 1px solid $color-dark;
+                            }
+                        }
+
+                        .submit-btn {
+                            width: 200px;
+                            height: 55px;
+                            background-color: $color-theme;
+                            color: $color-white;
+                            font-size: 16px;
+                            border: none;
+                            transition: all 0.2s ease-in-out;
+
+                            &:hover {
+                                background-color: $color-dark;
+                            }
+                        }
+                    }
+
+                    .share {
+                        padding: 0;
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 70%;
+
+                        .share-link {
+                            border-radius: 50%;
+                            background-color: #F4F4F4;
+
+                            a {
+                                width: 40px;
+                                height: 40px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

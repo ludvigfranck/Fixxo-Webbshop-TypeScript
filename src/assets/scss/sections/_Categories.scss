@@ -1,0 +1,42 @@
+.category {
+    margin-top: 100px;
+    text-align: center;
+
+    .category-title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        max-width: $max-width-small;
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        padding: 0;
+
+        .category-container {
+            display: flex;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+
+            .category-box-1 {
+                width: 100%;
+                padding: 30px;
+                display: flex;
+            }
+
+            .category-box-2 {
+                position: absolute;
+                right: -150px;
+            }
+        }
+
+        .category-btn {
+            background-color: $color-white;
+            font-size: 32px;
+            border: none;
+        }
+
+    }
+}

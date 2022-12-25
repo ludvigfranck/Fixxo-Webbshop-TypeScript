@@ -24,7 +24,7 @@ const ShoppingCartProduct = ({product, quantity}: ProductProps) => {
             </div>
         </div>
         <div className="item-price">
-            <div>{product.price}SEK</div>
+            <div>{product.price} $</div>
             <button onClick={() => removeProduct(product.articleNumber)}><i className="fa-regular fa-trash"></i></button>
         </div>
     </div>

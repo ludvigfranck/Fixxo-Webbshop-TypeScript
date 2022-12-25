@@ -4,7 +4,7 @@ import ShowcaseImgLeft from '../assets/images/1.png'
 import ShowCaseImgRight from '../assets/images/2.png'
 
 
-const ShowcaseSection = () => {
+const ShowcaseSection: React.FC = () => {
   return (
     <section className="showcase">
         <div className="container">

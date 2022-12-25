@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarSection from '../sections/NavbarSection'
 
-const LikeView = () => {
+const LikeView: React.FC = () => {
   return (
     <>
       <NavbarSection />

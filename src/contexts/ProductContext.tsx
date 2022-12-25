@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from 'react'
-import { IProductContext, Product, ReqProduct } from '../models/productModel'
+import { IProductContext, Product } from '../models/productModel'
 
 interface ProviderProps {
     children: any
@@ -21,21 +21,12 @@ const ProductProvider = ({children}: ProviderProps) => {
         price: 0,
         imageName: ""
     }
-    const default_reqProduct = {
-        tag: "",
-        articleNumber: "", 
-        name: "",
-        category: "",
-        price: 0,
-        imageName: ""
-    }
 
     const [product, setProduct] = useState<Product>(default_product)
-    const [reqProduct, setReqProduct] = useState<ReqProduct>(default_reqProduct)
     const [products, setProducts] = useState<Product[]>([])
-    const [featured, setFeatured] = useState<ReqProduct[]>([])
-    const [flashsale, setFlashsale] = useState<ReqProduct[]>([])
-    const [sale, setSale] = useState<ReqProduct[]>([])
+    const [featured, setFeatured] = useState<Product[]>([])
+    const [flashsale, setFlashsale] = useState<Product[]>([])
+    const [sale, setSale] = useState<Product[]>([])
 
     const createProduct = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -45,10 +36,10 @@ const ProductProvider = ({children}: ProviderProps) => {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(reqProduct)
+            body: JSON.stringify(product)
         })
         if(res.status === 201) {
-            setReqProduct(default_product)
+            setProduct(default_product)
             console.log(await res.json())
         } else {
             console.log('error')
@@ -57,13 +48,11 @@ const ProductProvider = ({children}: ProviderProps) => {
 
     const getProducts = async () => {
         const res = await fetch(baseUrl)
-        if(res.status === 200)
-            setProducts(await res.json())
+        setProducts(await res.json())
     }
 
-    const getProduct = async (articleNumber: string) => {
-        console.log(product)
-        const res = await fetch(`${baseUrl}/details/${articleNumber}`)
+    const getProduct = async (articleNumber?: string) => {
+        const res = await fetch(`${baseUrl}/product/details/${articleNumber}`)
         if(res.status === 200)
             setProduct(await res.json())
     }
@@ -86,7 +75,7 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const getFeatured = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/FeaturedProducts`
         if(take !== 0)
             url += `/${take}`
 
@@ -95,7 +84,7 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const getFlashsale = async (take: number = 0) => {
-        let url = `${baseUrl}/flashsale`
+        let url = `${baseUrl}/FlashsaleProducts`
         if(take !== 0)
             url += `/${take}`
 
@@ -104,7 +93,7 @@ const ProductProvider = ({children}: ProviderProps) => {
     }
 
     const getSale = async (take: number = 0) => {
-        let url = `${baseUrl}/sale`
+        let url = `${baseUrl}/SaleProducts`
         if(take !== 0)
             url += `/${take}`
 
@@ -112,7 +101,7 @@ const ProductProvider = ({children}: ProviderProps) => {
         setSale(await res.json())
     }
 
-    return <ProductContext.Provider value={{product, setProduct, reqProduct, setReqProduct, products, setProducts, featured, getFeatured, flashsale, getFlashsale, sale, getSale, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
+    return <ProductContext.Provider value={{product, setProduct, products, setProducts, featured, getFeatured, flashsale, getFlashsale, sale, getSale, createProduct, getProduct, getProducts, updateProduct, removeProduct}}>
         {children}
     </ProductContext.Provider>
 }

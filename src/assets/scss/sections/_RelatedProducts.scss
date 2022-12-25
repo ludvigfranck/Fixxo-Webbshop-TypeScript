@@ -1,0 +1,18 @@
+.related-products {
+    margin-top: 60px;
+
+    .container {
+        max-width: $max-width-small;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

@@ -168,3 +168,31 @@ Här specefierar vi att vi ska använda route '/' vilket blir alla produkter och
 med req (hämta) res (svara). Innuti måsvingarna så specifierar vi vad denna route ska göra. För att skicka iväg alla 
 produkter så skriver vi res.status(200).json(products). Så när status koden är 200 vilket är ok så svarar vi med alla 
 produkter.  
+
+När det kommer till backend delar så ser vi inte resultatet av den kod vi skriver. Vilket vi gör när vi skriver frontend 
+delarna. När vi ska använda oss utav en databaslösning och i detta fall MongoDB. Så måste vi installera lite olika saker 
+till vår backend. 
+
+npm install mongoose, dotenv, bcryptjs, jsonwebtoken
+
+när vi gjort detta så ska vi skapa en .env fil vilket är en enviroment fil som vi ska lägga in lite saker i. .env filen 
+kommer att innehålla vårt portnummer 5000. MONGODB_URI = (nånting) och JWT_SECRET. Dessa är tillför att spara information 
+som kan vara känslig ex API nycklar. URI:n beskriver värdarna som ska användas och alternativen som finns. 
+
+.env filen är också till för att spara enviroment varibler på en plats så att vi slipper sprida ut dem över hela 
+projektet. 
+
+mongoose är en provider för att kunna koppla sig till MongoDB servern. 
+
+användarnamn MongoDB: win22
+
+För att göra uppdatera, ta bort och skapa produkter säker så ska vi göra så att en användare ska vara inloggad för 
+att kunna göra dessa saker. Detta gör vi med bcryptjs och jsonwebtoken. bcryptjs krypterar ex ett lösenord så att de 
+inte skrivs i klartext och jsonwebtoken är en token som vi får tillbaka efter vi loggat in. 
+
+Att salta ett lösenord menas med att ett slumptal hashas tillsammans med lösenordet. Saltet är inte hemligt och kan 
+lagras med i klartext med ex användarnamnet. Det är viktigt att saltet är slumpmässigt, tillräckligt långt samt 
+unikt per användare. Hashas menas med att istället för att lagra ett lösenord i klartext så kallar man att lösenordet 
+hashas. Hashning gör att lösenordet blir krypterat med en kontrollsumma som räknas ut av en matematisk funktion. 
+När användaren skapas så hashas dens lösenord med den matematiska funktionen och sedan när användaren loggar in så 
+genereras en ny hashning med samma funktion som jämförs med den första hashningen. 

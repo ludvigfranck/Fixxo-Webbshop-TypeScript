@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import BannerImg from '../assets/images/3.png'
 
-const ClearenceBanner = () => {
+const ClearenceBanner: React.FC = () => {
   return (
     <>
         <div className="clearence-content">

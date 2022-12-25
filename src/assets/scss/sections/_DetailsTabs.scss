@@ -1,0 +1,36 @@
+.tabs-section {
+    margin-top: 60px;
+
+    .container {
+        max-width: $max-width-small;
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            width: 540px;
+        }
+
+        .tabs-border {
+            width: 540px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-top: 1px solid $color-lightgray;
+            position: relative;
+
+            .active {
+                position: absolute;
+                width: 90px;
+                top: -2px;
+                border-top: 1px solid $color-theme;
+            }
+        }
+
+        .tabs-content {
+            margin-top: 25px;
+
+            .tab-content {
+                font-size: 16px;
+            }
+        }
+    }
+}

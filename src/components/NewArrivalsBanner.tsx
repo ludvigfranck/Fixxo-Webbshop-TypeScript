@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import BannerImg from '../assets/images/4.png'
 
-const NewArrivalsBanner = () => {
+const NewArrivalsBanner: React.FC = () => {
   return (
     <>
         <div className="new-arrivals-content">

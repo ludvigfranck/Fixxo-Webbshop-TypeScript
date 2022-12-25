@@ -3,12 +3,12 @@ import ProductCard from '../components/ProductCard'
 import { ProductContext } from '../contexts/ProductContext'
 import { IProductContext, Product } from '../models/productModel'
 
-const ProductsListSection = () => {
+const ProductsListSection: React.FC = () => {
     const { products, getProducts } = React.useContext(ProductContext) as IProductContext
-    
+
     useEffect(() => {
         getProducts()
-    }, [getProducts])
+    }, [])
 
     return (
     <section className="product-list">

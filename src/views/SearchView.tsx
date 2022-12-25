@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarSection from '../sections/NavbarSection'
 
-const SearchView = () => {
+const SearchView: React.FC = () => {
   return (
     <>
       <NavbarSection />

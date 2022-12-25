@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarSection from '../sections/NavbarSection'
 
-const CompareView = () => {
+const CompareView: React.FC = () => {
   return (
     <>
       <NavbarSection />

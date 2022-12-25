@@ -5,7 +5,6 @@ const CategoryView = () => {
   return (
     <>
       <NavbarSection />
-      <div>CategoryView</div>
     </>
     
   )

@@ -1,0 +1,86 @@
+.user-form {
+    margin-top: 200px;
+    
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: $max-width-small;
+
+        .log-in-form {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: $linear-gradient-light;
+
+            h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: 700;
+            }
+
+            .user-input {
+                display: grid;
+
+                label {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+    
+                input {
+                    height: 60px;
+                    outline: none;
+                    border: 1px solid $linear-gradient-dark;
+                    padding-left: 10px;
+                    font-size: 18px;
+                }
+
+                .btn-theme {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .sign-in-form {
+            height: 750px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: $linear-gradient-light;
+
+            h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: 700;
+            }
+
+            .user-input {
+                display: grid;
+
+                label {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+    
+                input {
+                    height: 60px;
+                    outline: none;
+                    border: 1px solid $linear-gradient-dark;
+                    padding-left: 10px;
+                    font-size: 18px;
+                }
+    
+                .btn-theme {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

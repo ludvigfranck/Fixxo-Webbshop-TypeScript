@@ -11,7 +11,7 @@ import LikeView from './views/LikeView';
 import ProductProvider from './contexts/ProductContext';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import ProductDetailView from './views/ProductDetailView';
-import EditView from './views/EditView';
+import UserView from './views/UserView';
 
 
 const App: React.FC = () => {
@@ -26,10 +26,10 @@ const App: React.FC = () => {
           <Route path="/products" element={<ProductsView />} />
           <Route path="/products/:id" element={<ProductDetailView />} />
           <Route path="/contacts" element={<ContactsView />} />
-          <Route path="/edit" element={<EditView />} />
           <Route path="/search" element={<SearchView />} />
           <Route path="/compare" element={<CompareView />} />
           <Route path="/like" element={<LikeView />} />
+          <Route path="/user" element={<UserView />} />
         </Routes>
       </BrowserRouter>
     </ShoppingCartProvider>

@@ -21,12 +21,12 @@ return (
                 <NavLink className="nav-link" to="/category" end>Category</NavLink>
                 <NavLink className="nav-link" to="/products" >Products</NavLink>
                 <NavLink className="nav-link" to="/contacts" end>Contacts</NavLink>
-                <NavLink className="nav-link" to="/edit" end>Edit</NavLink>
             </div>
             <div className="nav-icon-links">
                 <NavbarLinks icon="fa-regular fa-magnifying-glass" link="/search" />
                 <NavbarLinks icon="fa-regular fa-code-compare" link="/compare" hideOnMobile={true}/>
-                <NavbarLinks icon="fa-regular fa-heart" link="/like" hideOnMobile={true} badge={0} />
+                <NavbarLinks icon="fa-regular fa-heart" link="/like" hideOnMobile={true} />
+                <NavbarLinks icon="fa-regular fa-user" link="/user" />
                 <button className="nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartQuantity}</span>
                     <i className="fa-regular fa-bag-shopping"></i>
